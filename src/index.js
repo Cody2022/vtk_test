@@ -22,7 +22,7 @@ const controlPanel = `
   </tr>
   <tr>
     <td>
-      <input class="resolution" type="range" min="4" max="80" value="6" />
+      <input class="resolution" type="range" min="4" max="1000" value="6" />
     </td>
   </tr>
 </table>
@@ -40,7 +40,8 @@ const renderWindow = fullScreenRenderer.getRenderWindow();
 // Example code
 // ----------------------------------------------------------------------------
 
-const coneSource = vtkConeSource.newInstance({ height: 1.0 });
+const coneSource = vtkConeSource.newInstance({ height: 1.0 });  
+// height of the cone
 const filter = vtkCalculator.newInstance();
 
 filter.setInputConnection(coneSource.getOutputPort());
